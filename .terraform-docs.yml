@@ -1,0 +1,27 @@
+header-from: main.tf
+
+formatter: "markdown table"
+
+sort:
+  enabled: true
+  by: required
+
+content: |
+  {{ .Header }}
+  {{ .Requirements }}
+  # Examples
+
+  ``` hcl
+    {{ include "examples/examples01.tf" }}
+  ```
+  
+  {{ .Inputs }}
+  {{ .Outputs }}
+  {{ .Resources }}
+  
+settings:
+  color: true
+  default: true
+  description: true
+  sensitive: true
+  type: true
