@@ -3,6 +3,7 @@
 
 | Name | Version |
 |------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.15.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.70.0 |
 # Examples
 
@@ -20,15 +21,15 @@ module "vpc_prod" {
   public_subnets     = {
     public-a ={
     cidr_block = "10.200.0.0/24"
-    az_id = "us-west-1b"
+    az_id = "us-east-2a"
     } ,
     public-b = {
     cidr_block = "10.200.1.0/24"
-    az_id = "us-west-1b"
+    az_id = "us-east-2b"
     } ,
     public-c = {
     cidr_block = "10.200.2.0/24"
-    az_id = "us-west-1c"
+    az_id = "us-east-2c"
     }
   }
   
@@ -36,45 +37,45 @@ module "vpc_prod" {
 private_subnets     = {
     private-a ={
     cidr_block = "10.200.4.0/22"
-    az_id = "us-west-1b"
+    az_id = "us-east-2a"
     } ,
     private-b = {
     cidr_block = "10.200.8.0/22"
-    az_id = "us-west-1b"
+    az_id = "us-east-2b"
     } ,
     private-c = {
     cidr_block = "10.200.12.0/22"
-    az_id = "us-west-1c"
+    az_id = "us-east-2c"
     }
   }
 
 database_subnets     = {
     backend-a ={
     cidr_block = "10.200.16.0/22"
-    az_id = "us-west-1b"
+    az_id = "uus-east-2a"
     } ,
     backend-b = {
     cidr_block = "10.200.20.0/22"
-    az_id = "us-west-1b"
+    az_id = "us-east-2b"
     } ,
     backend-c = {
     cidr_block = "10.200.24.0/22"
-    az_id = "us-west-1c"
+    az_id = "us-east-2c"
     }
   }
 
 infra_subnets     = {
     clusters-a ={
     cidr_block = "10.200.28.0/22"
-    az_id = "us-west-1b"
+    az_id = "us-east-2a"
     } ,
     clusters-b = {
     cidr_block = "10.200.32.0/22"
-    az_id = "us-west-1b"
+    az_id = "us-east-2b"
     } ,
     clusters-c = {
     cidr_block = "10.200.36.0/22"
-    az_id = "us-west-1c"
+    az_id = "us-east-2c"
     }
   }
 
@@ -116,12 +117,12 @@ infra_subnets     = {
 
 | Name | Description |
 |------|-------------|
-| <a name="output_Private_subnets_ids"></a> [Private\_subnets\_ids](#output\_Private\_subnets\_ids) | map of private\_subnets ids |
 | <a name="output_database_route_table_ids"></a> [database\_route\_table\_ids](#output\_database\_route\_table\_ids) | list of database\_route\_table ids |
 | <a name="output_database_subnets_ids"></a> [database\_subnets\_ids](#output\_database\_subnets\_ids) | map of database\_subnets ids |
 | <a name="output_infra_route_table_ids"></a> [infra\_route\_table\_ids](#output\_infra\_route\_table\_ids) | list of infra\_route\_table ids |
 | <a name="output_infra_subnets_ids"></a> [infra\_subnets\_ids](#output\_infra\_subnets\_ids) | map of infra\_subnets ids |
 | <a name="output_private_route_table_ids"></a> [private\_route\_table\_ids](#output\_private\_route\_table\_ids) | list of private\_route\_table ids |
+| <a name="output_private_subnets_ids"></a> [private\_subnets\_ids](#output\_private\_subnets\_ids) | map of private\_subnets ids |
 | <a name="output_public_route_table_ids"></a> [public\_route\_table\_ids](#output\_public\_route\_table\_ids) | list of public\_route\_table ids |
 | <a name="output_public_subnets_ids"></a> [public\_subnets\_ids](#output\_public\_subnets\_ids) | map of public\_subnets ids |
 | <a name="output_vcp_id"></a> [vcp\_id](#output\_vcp\_id) | string of vpc id |
